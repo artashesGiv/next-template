@@ -11,9 +11,7 @@ export default function Home() {
 
   return (
     <div className='home custom-scroll-bar'>
-      <Button className='button' onClick={onClick}>
-        text
-      </Button>
+      <Button onClick={onClick}>text</Button>
       <div className='nested' />
     </div>
   )

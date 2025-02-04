@@ -5,8 +5,8 @@ import './button.scss'
 export type ButtonProps = {
   disabled?: boolean
   className?: string
+  children?: ReactNode
   onClick: (value: number) => void
-  children: ReactNode
 }
 
 export const Button = memo(
@@ -21,7 +21,7 @@ export const Button = memo(
 
     // Оптимизированное значение класса
     const summaryClassName = useMemo(() => {
-      return `button ${disabled && 'is-disabled'} ${className}`
+      return `button ${disabled && 'is-disabled'} ${className || ''}`
     }, [disabled, className])
 
     return (
