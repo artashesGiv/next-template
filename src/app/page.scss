@@ -1,0 +1,13 @@
+.button {
+  padding: 0 toRem(12);
+  border: 1px solid var(--primary-color);
+}
+
+.home {
+  border: 1px solid #000;
+  height: 500px;
+  overflow: auto;
+}
+.nested {
+  height: 1000px;
+}
