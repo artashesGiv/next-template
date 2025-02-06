@@ -9,14 +9,14 @@ export type ButtonProps = {
   onClick: () => void
 }
 
-export const Button = memo(
-  ({ children, onClick, disabled = false, className }: ButtonProps) => {
-    const summaryClassName = useMemo(() => {
+export const Button = memo<ButtonProps>(
+  ({ children, onClick, disabled = false, className }) => {
+    const classes = useMemo(() => {
       return `button ${disabled && 'is-disabled'} ${className || ''}`
     }, [disabled, className])
 
     return (
-      <button className={summaryClassName} onClick={onClick}>
+      <button className={classes} onClick={onClick}>
         {children}
       </button>
     )
