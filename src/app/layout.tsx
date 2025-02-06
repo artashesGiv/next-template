@@ -5,7 +5,7 @@ import '@styles/index.scss'
 import { nunitoSans } from '@styles/fonts'
 
 export const metadata: Metadata = {
-  title: 'METEOq',
+  title: 'METEO',
   description: 'METEO FRONTEND',
 }
 
