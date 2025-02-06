@@ -1,16 +1,11 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Nunito_Sans } from 'next/font/google'
 import './layout.scss'
 import '../../styles/index.scss'
 import Link from 'next/link'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const nunitoSans = Nunito_Sans({
+  variable: '--font-nunito-sans',
   subsets: ['latin'],
 })
 
@@ -26,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${nunitoSans.variable}`}>
         <div className='menu'>
           <Link href='/'>Home</Link>
           <Link href='/auth'>Auth</Link>
