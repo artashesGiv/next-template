@@ -1,36 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Для старта
 
-First, run the development server:
+Запустить:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Как добавить иконки
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. добавить svg иконки по пути './src/shared/assets/icons'
+2. запустить `npm run icons`
+3. Иконки отформатируются, сохранятся в [formatted](src/shared/assets/icons/formatted), сгенерируется css файл.
+4. Использовать компонент `<IconBase name={name}/>`, где name - сгенерированное имя иконки по имени svg файла
+5. Помимо этого в [icons.ts](src/shared/types/icons.ts) обновятся типы иконок, откуда они зарегистрированы в [global.d.ts](global.d.ts), и можно использовать тип `Icons` без импорта
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ВНИМАНИЕ. Не прогонять иконки из [formatted](src/shared/assets/icons/formatted) еще раз, могут возникнуть непредвиденные ошибки, если по какой-то причине, нужно обновить эти иконки, придется брать исходник. Либо изменить скрипт [formattingIcons.mjs](scripts/formattingIcons.mjs), что бы исходники не удалялись!
