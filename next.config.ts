@@ -1,6 +1,11 @@
 import type { NextConfig } from 'next'
+import path from 'node:path'
 
 const nextConfig: NextConfig = {
+  webpack: config => {
+    config.resolve.alias['@styles'] = path.resolve(__dirname, 'styles')
+    return config
+  },
   sassOptions: {
     prependData: `
     @use "styles/utility/mixins.scss" as *;

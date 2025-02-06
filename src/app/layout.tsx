@@ -1,13 +1,8 @@
 import type { Metadata } from 'next'
-import { Nunito_Sans } from 'next/font/google'
-import './layout.scss'
-import '../../styles/index.scss'
 import Link from 'next/link'
-
-const nunitoSans = Nunito_Sans({
-  variable: '--font-nunito-sans',
-  subsets: ['latin'],
-})
+import './layout.scss'
+import '@styles/index.scss'
+import { nunitoSans } from '@styles/fonts'
 
 export const metadata: Metadata = {
   title: 'METEO',
